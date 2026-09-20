@@ -166,7 +166,7 @@ Response (`Verdict` from [`src/types.ts`](src/types.ts)):
   "indicators": [
     { "key": "dmarc_fail", "label": "DMARC failed for northwind-bank.example", "weight": 0.95, "source": "header" },
     { "key": "reply_to_mismatch", "label": "Reply-To domain freemail.example differs from sender domain", "weight": 0.8, "source": "header" },
-    { "key": "url_domain_mismatch", "label": "Link points to northwind-bank-secure.example, not the sender domain", "weight": 0.75, "source": "url" },
+    { "key": "anchor_text_mismatch", "label": "Link points to northwind-bank-secure.example, not the sender domain", "weight": 0.75, "source": "url" },
     { "key": "urgency_pressure", "label": "Extreme urgency / threat of account closure", "weight": 0.6, "source": "jev" }
   ],
   "attackType": "credential_harvest",
