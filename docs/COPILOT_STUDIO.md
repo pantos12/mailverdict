@@ -332,3 +332,29 @@ only reserved `.example` domains, so they are safe to send inside your tenant.
 Still stuck: run the same email through `npm run analyze -- <file.eml>`
 locally with the production env vars in `.env`. If that works, the problem is
 in the Microsoft configuration; if it does not, it is in the deployment.
+
+## G. Hosting on Azure Container Apps (instead of Vercel)
+
+The repo ships a `Dockerfile` and `src/server.ts`, which serve the same
+`/health`, `/v1/analyze` and `/mcp` handlers on port 8080. Build in Azure (no
+local Docker needed):
+
+```bash
+az group create -n rg-mailverdict -l eastus
+az acr create -n <acrname> -g rg-mailverdict --sku Basic
+az acr build -r <acrname> -t mailverdict:latest .
+az containerapp env create -n cae-mailverdict -g rg-mailverdict -l eastus
+az containerapp create -n mailverdict -g rg-mailverdict --environment cae-mailverdict \
+  --image <acrname>.azurecr.io/mailverdict:latest --registry-server <acrname>.azurecr.io \
+  --target-port 8080 --ingress external --min-replicas 0 --max-replicas 2 \
+  --secrets typesafe=<key> openrouter=<key> apikey=<key> \
+  --env-vars TYPESAFE_API_KEY=secretref:typesafe OPENROUTER_API_KEY=secretref:openrouter MAILVERDICT_API_KEY=secretref:apikey
+```
+
+Use the printed FQDN in place of `mailverdict.vercel.app` everywhere above.
+
+### Power Automate: send the raw email without JSON escaping
+
+`POST /v1/analyze` also accepts the email source directly. In the HTTP action set
+header `Content-Type: message/rfc822` and put the **Body** output of
+**Export email (V2)** straight into the request body — no expressions needed.

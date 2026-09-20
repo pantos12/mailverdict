@@ -55,7 +55,7 @@ calibration table.
 ```text
 Calibration vs vibes: how MailVerdict decides an email is phishing, in one API call.
 
-The judge is Jev, TypeSafe's "System One" model. A classifier, not a chat model. You give it structured state and named questions; it returns probabilities. No prompt, no completion, nothing to hijack.
+The judge is Jev, TypeSafe's "System One" model. A classifier, not a chat model. You give it structured state and named questions; it returns numbers. No prompt, no completion, nothing to hijack.
 
 One call, six independent questions:
 - is_phishing (probability)
@@ -73,7 +73,7 @@ Deterministic checks stay in code: DMARC fail, Reply-To on freemail, anchor text
 
 The LLM writes three sentences for the 10-20% in the review band. It cannot change the label.
 
-Cost: ~$0.0001 per email. 24 labelled fixtures and an eval that fails if recall drops under 0.8 ship in the repo. MCP server for Copilot Studio, REST for Power Automate, on Vercel.
+Cost: ~$0.0001 per email. 24 labelled fixtures and an eval that fails if recall drops under 0.8 ship in the repo. MCP for Copilot Studio, REST for Power Automate, on Vercel.
 
 <repo>
 

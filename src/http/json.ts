@@ -25,6 +25,24 @@ export async function readJsonBody(req: BodyRequest): Promise<unknown> {
     if (Buffer.isBuffer(req.body)) return parseJson(req.body.toString("utf8"));
     return req.body;
   }
+  const text = await readTextBody(req);
+  if (text.length === 0) return undefined;
+  return parseJson(text);
+}
+
+/** True when the request declares a non-JSON email body (`message/rfc822` or `text/plain`). */
+export function isRawEmailContentType(req: IncomingMessage): boolean {
+  const ct = String(req.headers["content-type"] ?? "").toLowerCase();
+  return ct.startsWith("message/rfc822") || ct.startsWith("text/plain");
+}
+
+/** Read the request body as UTF-8 text (uses a pre-parsed `req.body` when present). */
+export async function readTextBody(req: BodyRequest): Promise<string> {
+  if (req.body !== undefined && req.body !== null) {
+    if (typeof req.body === "string") return req.body;
+    if (Buffer.isBuffer(req.body)) return req.body.toString("utf8");
+    return JSON.stringify(req.body);
+  }
 
   const chunks: Buffer[] = [];
   let total = 0;
@@ -36,8 +54,7 @@ export async function readJsonBody(req: BodyRequest): Promise<unknown> {
     }
     chunks.push(buf);
   }
-  if (total === 0) return undefined;
-  return parseJson(Buffer.concat(chunks).toString("utf8"));
+  return Buffer.concat(chunks).toString("utf8");
 }
 
 function parseJson(text: string): unknown {

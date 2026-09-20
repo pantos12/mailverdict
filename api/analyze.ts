@@ -1,13 +1,23 @@
 /**
  * POST /v1/analyze (rewritten to /api/analyze). Plain REST for Power Automate and curl.
  *
- * Body: AnalyzeRequest ({ raw } | { fields: {...} }, optional policy) or the flat
- * Power Automate shape ({ subject, from, body, html, headers, ... }) which is wrapped.
+ * Body: AnalyzeRequest ({ raw } | { fields: {...} }, optional policy), the flat
+ * Power Automate shape ({ subject, from, body, html, headers, ... }) which is wrapped,
+ * or — with `Content-Type: message/rfc822` — the raw email source itself (what
+ * Power Automate's "Export email (V2)" returns), which becomes `{ raw }`.
  */
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { analyzeEmail, createDefaultDeps, validateAnalyzeRequest } from "../src/analyze.js";
 import { requireApiKey } from "../src/http/auth.js";
-import { HttpError, applyCors, readJsonBody, sanitizeErrorMessage, sendJson } from "../src/http/json.js";
+import {
+  HttpError,
+  applyCors,
+  isRawEmailContentType,
+  readJsonBody,
+  readTextBody,
+  sanitizeErrorMessage,
+  sendJson,
+} from "../src/http/json.js";
 
 const FLAT_FIELD_KEYS = ["subject", "from", "replyTo", "to", "body", "html", "headers"] as const;
 
@@ -64,7 +74,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   let body: unknown;
   try {
-    body = await readJsonBody(req);
+    body = isRawEmailContentType(req) ? { raw: await readTextBody(req) } : await readJsonBody(req);
   } catch (err) {
     const status = err instanceof HttpError ? err.status : 400;
     sendJson(res, status, { error: err instanceof Error ? err.message : "bad request" });

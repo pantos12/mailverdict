@@ -139,6 +139,28 @@ describe("POST /api/analyze", () => {
     expect(validateAnalyzeRequest).toHaveBeenCalledWith({ raw: "x" });
   });
 
+  it("treats a message/rfc822 body as { raw } (Power Automate Export email)", async () => {
+    analyzeEmail.mockResolvedValue(verdict);
+    const res = makeRes();
+    const eml = 'From: a@b.c\r\nSubject: {"not":"json"}\r\n\r\nBody with "quotes" and\nnewlines';
+    await call(makeReq({ headers: { ...authHeaders, "content-type": "message/rfc822" }, body: Buffer.from(eml) }), res);
+    expect(res.statusCode).toBe(200);
+    expect(validateAnalyzeRequest).toHaveBeenCalledWith({ raw: eml });
+  });
+
+  it("streams a message/rfc822 body when it is not pre-parsed", async () => {
+    analyzeEmail.mockResolvedValue(verdict);
+    const res = makeRes();
+    const req = makeReq({ headers: { ...authHeaders, "content-type": "message/rfc822; charset=utf-8" } });
+    const eml = "From: a@b.c\r\n\r\nhello";
+    (req as unknown as { [Symbol.asyncIterator]: () => AsyncIterator<Buffer> })[Symbol.asyncIterator] = async function* () {
+      yield Buffer.from(eml);
+    };
+    await call(req, res);
+    expect(res.statusCode).toBe(200);
+    expect(validateAnalyzeRequest).toHaveBeenCalledWith({ raw: eml });
+  });
+
   it("returns 401 without a key and does not analyze", async () => {
     const res = makeRes();
     await call(makeReq({ body: { raw: "x" } }), res);
