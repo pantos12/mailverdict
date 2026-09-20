@@ -1,0 +1,73 @@
+Return-Path: <bounces+4471@mail.meadowlark-weekly.example>
+Received: from mail.meadowlark-weekly.example (mail.meadowlark-weekly.example [198.51.100.10])
+	by mx.contoso.example with ESMTPS id 21fa0c; Mon, 14 Sep 2026 12:00:14 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=mail.meadowlark-weekly.example;
+	dkim=pass header.d=meadowlark-weekly.example;
+	dmarc=pass (p=quarantine) header.from=meadowlark-weekly.example
+Message-ID: <issue-212.4471@meadowlark-weekly.example>
+Date: Mon, 14 Sep 2026 12:00:12 +0000
+From: "Meadowlark Weekly" <hello@meadowlark-weekly.example>
+To: jordan.reyes@contoso.example
+Subject: Issue #212: Why small teams ship faster, plus three tools we liked this week
+List-Unsubscribe: <https://meadowlark-weekly.example/unsubscribe/4471?t=a8c1>, <mailto:unsubscribe+4471@meadowlark-weekly.example>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Precedence: bulk
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1_lg01"
+
+--b1_lg01
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+MEADOWLARK WEEKLY - Issue #212
+
+Hi Jordan,
+
+This week's essay: Why small teams ship faster. We looked at 40 product
+launches from the last year and found that team size predicted cycle time
+better than budget did.
+Read it: https://meadowlark-weekly.example/issues/212/small-teams
+
+Three tools we liked
+- Notchboard: a lightweight retro board that works in the browser.
+- Fieldnote CLI: turn shell history into a daily log.
+- Tidy Tabs: closes tabs you have not looked at in 30 days.
+
+Reader question
+"How do you run a retro when half the team is async?" We answer in the
+full issue.
+
+Until next Monday,
+Sam and the Meadowlark team
+
+--
+You are receiving this because you subscribed with jordan.reyes@contoso.example.
+Unsubscribe: https://meadowlark-weekly.example/unsubscribe/4471?t=a8c1
+Meadowlark Media, 12 Orchard Lane, Springfield
+
+--b1_lg01
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Georgia,serif;max-width:600px">
+<h1 style="font-size:20px">Meadowlark Weekly &mdash; Issue #212</h1>
+<p>Hi Jordan,</p>
+<p><b>This week's essay: Why small teams ship faster.</b> We looked at 40 product
+launches from the last year and found that team size predicted cycle time
+better than budget did.
+<a href="https://meadowlark-weekly.example/issues/212/small-teams">Read it</a></p>
+<h3>Three tools we liked</h3>
+<ul>
+<li><a href="https://meadowlark-weekly.example/go/notchboard">Notchboard</a>: a lightweight retro board that works in the browser.</li>
+<li><a href="https://meadowlark-weekly.example/go/fieldnote">Fieldnote CLI</a>: turn shell history into a daily log.</li>
+<li><a href="https://meadowlark-weekly.example/go/tidytabs">Tidy Tabs</a>: closes tabs you have not looked at in 30 days.</li>
+</ul>
+<p>Until next Monday,<br>Sam and the Meadowlark team</p>
+<hr>
+<p style="font-size:11px;color:#777">You are receiving this because you subscribed with jordan.reyes@contoso.example.
+<a href="https://meadowlark-weekly.example/unsubscribe/4471?t=a8c1">Unsubscribe</a> &middot;
+Meadowlark Media, 12 Orchard Lane, Springfield</p>
+</body></html>
+
+--b1_lg01--

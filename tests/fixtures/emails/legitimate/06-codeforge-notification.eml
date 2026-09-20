@@ -1,0 +1,55 @@
+Return-Path: <noreply@codeforge.example>
+Received: from out-12.codeforge.example (out-12.codeforge.example [198.51.100.120])
+	by mx.contoso.example with ESMTPS id 1b2c3d; Thu, 17 Sep 2026 16:05:47 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=codeforge.example;
+	dkim=pass header.d=codeforge.example;
+	dmarc=pass (p=reject) header.from=codeforge.example
+Message-ID: <contoso/billing-service/pull/482/review/9912@codeforge.example>
+In-Reply-To: <contoso/billing-service/pull/482@codeforge.example>
+References: <contoso/billing-service/pull/482@codeforge.example>
+Date: Thu, 17 Sep 2026 16:05:46 +0000
+From: "Amara Okafor (CodeForge)" <notifications@codeforge.example>
+Reply-To: "contoso/billing-service" <reply+AAX9K2@reply.codeforge.example>
+To: jordan.reyes@contoso.example
+Subject: Re: [contoso/billing-service] Fix rounding in proration (PR #482)
+List-Id: contoso/billing-service <billing-service.contoso.codeforge.example>
+List-Unsubscribe: <https://codeforge.example/notifications/unsubscribe/AAX9K2>
+X-CodeForge-Reason: review_requested
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1_lg06"
+
+--b1_lg06
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+@amara-okafor approved this pull request.
+
+> Looks good. One nit: `Math.round` here will round half away from zero
+> on negatives; `toFixed(2)` on the final amount would be consistent
+> with the invoice PDF. Not blocking.
+
+--
+View it on CodeForge:
+https://codeforge.example/contoso/billing-service/pull/482#pullrequestreview-9912
+
+You are receiving this because your review was requested.
+Unsubscribe from this thread: https://codeforge.example/notifications/unsubscribe/AAX9K2
+
+--b1_lg06
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:-apple-system,Segoe UI,Arial,sans-serif">
+<p><b>@amara-okafor</b> approved this pull request.</p>
+<blockquote style="border-left:3px solid #ddd;padding-left:10px;color:#444">
+Looks good. One nit: <code>Math.round</code> here will round half away from zero
+on negatives; <code>toFixed(2)</code> on the final amount would be consistent with
+the invoice PDF. Not blocking.
+</blockquote>
+<p><a href="https://codeforge.example/contoso/billing-service/pull/482#pullrequestreview-9912">View it on CodeForge</a></p>
+<p style="font-size:12px;color:#666">You are receiving this because your review was requested.<br>
+<a href="https://codeforge.example/notifications/unsubscribe/AAX9K2">Unsubscribe from this thread</a></p>
+</body></html>
+
+--b1_lg06--

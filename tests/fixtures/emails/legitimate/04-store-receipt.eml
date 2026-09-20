@@ -1,0 +1,69 @@
+Return-Path: <receipts@fabrikam-outfitters.example>
+Received: from mail.fabrikam-outfitters.example (mail.fabrikam-outfitters.example [198.51.100.34])
+	by mx.contoso.example with ESMTPS id 3ee0b7; Wed, 16 Sep 2026 18:42:29 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=fabrikam-outfitters.example;
+	dkim=pass header.d=fabrikam-outfitters.example;
+	dmarc=pass (p=reject) header.from=fabrikam-outfitters.example
+Message-ID: <order-FO-118273@fabrikam-outfitters.example>
+Date: Wed, 16 Sep 2026 18:42:28 +0000
+From: "Fabrikam Outfitters" <receipts@fabrikam-outfitters.example>
+To: jordan.reyes@contoso.example
+Subject: Your receipt for order FO-118273
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1_lg04"
+
+--b1_lg04
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Thanks for your order, Jordan!
+
+Order FO-118273 - placed 16 Sep 2026
+
+  1 x Trail Runner Jacket (Navy, M)        $89.00
+  2 x Merino Crew Socks                    $28.00
+  Subtotal                                $117.00
+  Shipping (standard, 3-5 days)             $0.00
+  Tax                                       $9.36
+  Total charged                           $126.36
+
+Paid with card ending 4417.
+
+Shipping to:
+  Jordan Reyes
+  221 Harbor View Rd, Apt 4
+  Portland
+
+We'll email you again when it ships. Track or change your order at
+https://fabrikam-outfitters.example/orders/FO-118273
+
+Questions? Reply to this email or visit https://fabrikam-outfitters.example/help
+
+Fabrikam Outfitters
+90 Wharf Street, Portland
+
+--b1_lg04
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Helvetica,Arial,sans-serif;max-width:600px">
+<h2>Thanks for your order, Jordan!</h2>
+<p>Order <b>FO-118273</b> &middot; placed 16 Sep 2026</p>
+<table cellpadding="6">
+<tr><td>1 x Trail Runner Jacket (Navy, M)</td><td align="right">$89.00</td></tr>
+<tr><td>2 x Merino Crew Socks</td><td align="right">$28.00</td></tr>
+<tr><td>Subtotal</td><td align="right">$117.00</td></tr>
+<tr><td>Shipping (standard, 3-5 days)</td><td align="right">$0.00</td></tr>
+<tr><td>Tax</td><td align="right">$9.36</td></tr>
+<tr><td><b>Total charged</b></td><td align="right"><b>$126.36</b></td></tr>
+</table>
+<p>Paid with card ending 4417.</p>
+<p>We'll email you again when it ships.
+<a href="https://fabrikam-outfitters.example/orders/FO-118273">Track or change your order</a></p>
+<p style="font-size:12px;color:#666">Questions? Reply to this email or visit our
+<a href="https://fabrikam-outfitters.example/help">help center</a>.<br>
+Fabrikam Outfitters, 90 Wharf Street, Portland</p>
+</body></html>
+
+--b1_lg04--

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MailVerdict</title>
+<meta name="description" content="Forward an email. Get a calibrated phishing verdict in under a second. MCP server for Copilot Studio, REST for Power Automate.">
+<style>
+  :root {
+    --bg: #f7f7f5; --fg: #17181c; --muted: #5c6070; --card: #ffffff; --line: #e3e4e8;
+    --accent: #1f5eff; --accent-fg: #ffffff; --danger: #c8281e; --danger-bg: #fdecea;
+    --warn: #a35d00; --ok: #1a7f4b; --code: #f0f1f4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1116; --fg: #e8e9ee; --muted: #9aa0b0; --card: #171a21; --line: #262a34;
+      --accent: #6b8cff; --accent-fg: #0b1020; --danger: #ff6b5e; --danger-bg: #2a1512;
+      --warn: #ffb454; --ok: #4fd18b; --code: #1e222c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 28px 0 8px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .brand { font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
+  nav a { margin-left: 18px; color: var(--muted); text-decoration: none; font-size: 15px; }
+  nav a:hover { color: var(--fg); }
+  .hero { padding: 56px 0 32px; }
+  h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.02em; }
+  .tagline { font-size: clamp(18px, 2.4vw, 22px); color: var(--muted); max-width: 640px; margin: 0 0 26px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: 10px; font-weight: 600; text-decoration: none; border: 1px solid transparent; }
+  .btn-primary { background: var(--accent); color: var(--accent-fg); }
+  .btn-secondary { border-color: var(--line); color: var(--fg); background: var(--card); }
+  section { padding: 36px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 24px; margin: 0 0 18px; letter-spacing: -0.01em; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .step { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .card h3 { margin: 0 0 8px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); }
+  .verdict { border-left: 5px solid var(--danger); }
+  .verdict .label { color: var(--danger); font-weight: 700; font-size: 20px; }
+  .verdict .prob { color: var(--muted); font-size: 15px; }
+  .verdict ul { margin: 12px 0 0; padding-left: 18px; }
+  .verdict li { margin: 4px 0; }
+  .verdict .explain { margin-top: 14px; padding: 12px; background: var(--danger-bg); border-radius: 10px; font-size: 15px; }
+  .chip { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--code); color: var(--muted); margin-left: 6px; vertical-align: middle; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; }
+  pre { background: var(--code); border: 1px solid var(--line); padding: 14px; border-radius: 10px; overflow-x: auto; margin: 0; }
+  .two { display: grid; gap: 20px; grid-template-columns: 1fr 1fr; align-items: start; }
+  @media (max-width: 760px) { .two { grid-template-columns: 1fr; } }
+  .price { text-align: center; max-width: 440px; margin: 0 auto; }
+  .price .amount { font-size: 44px; font-weight: 700; letter-spacing: -0.02em; }
+  .price .per { color: var(--muted); font-size: 15px; }
+  .price ul { list-style: none; padding: 0; margin: 18px 0 22px; text-align: left; }
+  .price li { padding: 7px 0; border-bottom: 1px solid var(--line); color: var(--fg); }
+  .price li::before { content: "\2713\00a0\00a0"; color: var(--ok); font-weight: 700; }
+  .price .btn { width: 100%; text-align: center; }
+  .small { color: var(--muted); font-size: 14px; }
+  footer { padding: 30px 0 44px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">MailVerdict</div>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#why">Why calibrated</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="border-top:0">
+    <h1>Is this email phishing? Get a verdict, not a vibe.</h1>
+    <p class="tagline">Forward an email. Get a calibrated phishing verdict in under a second.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#pricing">Start 7-day free trial</a>
+      <a class="btn btn-secondary" href="#how">See how it works</a>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="step">Step 1</div>
+        <h3>Forward the email</h3>
+        <p>Send the suspicious message to your MailVerdict inbox, call the REST endpoint from Power Automate, or ask your Copilot Studio agent. Raw .eml is best: headers give us SPF, DKIM and DMARC.</p>
+      </div>
+      <div class="card">
+        <div class="step">Step 2</div>
+        <h3>Jev decides</h3>
+        <p>Deterministic header and URL checks run first. Then Jev, a purpose-built judge model by TypeSafe, returns a calibrated probability plus attack type: credential harvest, payment fraud, malware, executive impersonation.</p>
+      </div>
+      <div class="card">
+        <div class="step">Step 3</div>
+        <h3>You get the verdict</h3>
+        <p>PHISHING, SUSPICIOUS or LEGITIMATE, the probability behind it, ranked indicators, and a plain-language explanation for the grey zone. Structured JSON for automation, a card for humans.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What a verdict looks like</h2>
+    <div class="two">
+      <div class="card verdict">
+        <div><span class="label">PHISHING</span> <span class="chip">credential_harvest</span></div>
+        <div class="prob">93% calibrated probability · 640 ms</div>
+        <ul>
+          <li>Link text says <code>paypal.com</code> but points to <code>paypa1-secure.com</code></li>
+          <li>Reply-To domain differs from From domain</li>
+          <li>SPF failed for the sending server</li>
+          <li>Extreme urgency: "account suspended within 24 hours"</li>
+        </ul>
+        <div class="explain">The message impersonates a payment provider and pushes you to sign in on a look-alike domain that the sender does not control. Do not click, reply or open attachments.</div>
+      </div>
+      <div>
+<pre>curl -X POST https://your-deploy.vercel.app/v1/analyze \
+  -H "x-api-key: $MAILVERDICT_API_KEY" \
+  -H "content-type: application/json" \
+  -d '{"subject":"Account suspended",
+       "from":"PayPal &lt;alerts@paypa1-secure.com&gt;",
+       "body":"Sign in within 24h: https://paypa1-secure.com/login"}'
+
+{ "label": "PHISHING",
+  "probability": 0.93,
+  "attackType": "credential_harvest",
+  "indicators": [ ... ],
+  "explanation": "...",
+  "latencyMs": 640 }</pre>
+        <p class="small">Same result over MCP at <code>/mcp</code> for Copilot Studio: tools <code>analyze_email</code>, <code>explain_verdict</code>, <code>get_policy</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2>Why calibrated beats an LLM guess</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>A probability you can set policy on</h3>
+        <p>When Jev says 93%, roughly 93 of 100 such emails are phishing. That lets you pick thresholds (auto-quarantine above 0.9, ask a human between 0.1 and 0.9) and know the trade-off you are making.</p>
+      </div>
+      <div class="card">
+        <h3>Consistent, not chatty</h3>
+        <p>General chat models drift with prompt wording and are confidently wrong on edge cases. A dedicated judge answers the same fixed questions every time. The LLM only writes the explanation, and only when the verdict needs one.</p>
+      </div>
+      <div class="card">
+        <h3>Fast and cheap by design</h3>
+        <p>One judge call per email, sub-second latency, no giant prompts. Deterministic checks (auth results, link mismatch, dangerous attachments) surface as indicators alongside the model's view.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2 style="text-align:center">Pricing</h2>
+    <div class="card price">
+      <div class="amount">$2.99</div>
+      <div class="per">per month, per mailbox</div>
+      <ul>
+        <li>Unlimited forwards (fair use)</li>
+        <li>Copilot Studio + Power Automate ready</li>
+        <li>Verdict + probability + indicators</li>
+        <li>7-day free trial</li>
+      </ul>
+      <!--
+        Paste your Stripe Payment Link below (Stripe Dashboard > Payment Links > New).
+        Replace both the href and the data-stripe-link value with the same URL.
+      -->
+      <a class="btn btn-primary" href="https://buy.stripe.com/REPLACE_ME" data-stripe-link="https://buy.stripe.com/REPLACE_ME" rel="noopener">Start free trial</a>
+      <p class="small" style="margin-top:14px">Prefer to run it yourself? <a href="https://github.com/pantos12/mailverdict">Self-host free (MIT) on GitHub</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div>MailVerdict</div>
+    <div>Judge: Jev by TypeSafe · Explainer: your OpenRouter model</div>
+  </footer>
+</div>
+</body>
+</html>

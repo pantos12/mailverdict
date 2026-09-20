@@ -1,0 +1,46 @@
+Return-Path: <amara.okafor@contoso.example>
+Received: from mail.contoso.example (mail.contoso.example [10.20.0.15])
+	by mx.contoso.example with ESMTPS id 66ab19; Tue, 15 Sep 2026 09:22:41 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=contoso.example;
+	dkim=pass header.d=contoso.example;
+	dmarc=pass header.from=contoso.example
+Message-ID: <d1f4a2b0-88c1-4ee2-9f0a-2c7e1b3d5a91@contoso.example>
+In-Reply-To: <9c2e7f10-1a4b-4c3d-8e5f-6a7b8c9d0e1f@contoso.example>
+References: <9c2e7f10-1a4b-4c3d-8e5f-6a7b8c9d0e1f@contoso.example>
+Date: Tue, 15 Sep 2026 09:22:40 +0000
+From: "Amara Okafor" <amara.okafor@contoso.example>
+To: "Jordan Reyes" <jordan.reyes@contoso.example>
+Cc: "Luis Ferreira" <luis.ferreira@contoso.example>
+Subject: RE: Q4 roadmap draft - comments by Thursday?
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hi Jordan,
+
+Thanks for the draft. A few thoughts:
+
+1. The onboarding rewrite (item 3) feels too big for one quarter. Could we
+   split it into "new signup flow" for Q4 and "team invites" for Q1?
+2. I would move the analytics dashboard up. Sales keeps asking for it.
+3. Small thing: the dates on slide 7 still say 2025.
+
+I've added comments directly in the shared doc as well. Happy to walk
+through them on Thursday's call if easier.
+
+Luis, anything from the platform side we should flag before this goes to
+leadership?
+
+Cheers,
+Amara
+
+-----Original Message-----
+From: Jordan Reyes
+Sent: Monday, 14 September 2026 16:05
+To: Amara Okafor; Luis Ferreira
+Subject: Q4 roadmap draft - comments by Thursday?
+
+Hi both, first pass at the Q4 roadmap is in the usual folder. Could you
+leave comments by Thursday so I can tidy it up before the leadership
+review on Friday? Thanks, Jordan

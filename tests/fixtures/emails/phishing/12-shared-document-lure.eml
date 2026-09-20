@@ -1,0 +1,53 @@
+Return-Path: <share@contoso-docs-share.example>
+Received: from share.contoso-docs-share.example (share.contoso-docs-share.example [203.0.113.17])
+	by mx.contoso.example with ESMTPS id 9a1e4d; Tue, 22 Sep 2026 10:26:50 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=contoso-docs-share.example;
+	dkim=pass header.d=contoso-docs-share.example;
+	dmarc=none header.from=contoso-docs-share.example
+Message-ID: <share-4419fa2c@contoso-docs-share.example>
+Date: Tue, 22 Sep 2026 10:26:49 +0000
+From: "Dana Whitfield (via Contoso Docs)" <share@contoso-docs-share.example>
+To: jordan.reyes@contoso.example
+Subject: Dana Whitfield shared "Q3 Bonus Allocation - CONFIDENTIAL.pdf" with you
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1_ph12"
+
+--b1_ph12
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Dana Whitfield shared a file with you
+
+"Q3 Bonus Allocation - CONFIDENTIAL.pdf"
+
+Message from Dana: "Jordan, please review your allocation before the
+Thursday call and let me know if the numbers look right."
+
+Open document:
+https://contoso-docs-share.example/d/4419fa2c/open
+
+You will need to sign in with your Contoso email account to view this
+document. This link expires in 24 hours.
+
+Contoso Docs - Secure file sharing
+
+--b1_ph12
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Segoe UI,Arial,sans-serif">
+<p><b>Dana Whitfield</b> shared a file with you</p>
+<div style="border:1px solid #ddd;padding:12px;width:320px">
+<span style="color:#c00">PDF</span> &nbsp; <b>Q3 Bonus Allocation - CONFIDENTIAL.pdf</b>
+</div>
+<p><i>"Jordan, please review your allocation before the Thursday call and let
+me know if the numbers look right."</i></p>
+<p><a href="https://contoso-docs-share.example/d/4419fa2c/open"
+style="background:#0078d4;color:#fff;padding:10px 18px;text-decoration:none">Open document</a></p>
+<p style="font-size:12px;color:#666">You will need to sign in with your Contoso
+email account to view this document. This link expires in 24 hours.</p>
+<p style="font-size:11px;color:#999">Contoso Docs &mdash; Secure file sharing</p>
+</body></html>
+
+--b1_ph12--

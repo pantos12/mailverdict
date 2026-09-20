@@ -1,0 +1,54 @@
+Return-Path: <luis.ferreira@contoso.example>
+Received: from mail.contoso.example (mail.contoso.example [10.20.0.15])
+	by mx.contoso.example with ESMTPS id 7c1d22; Tue, 15 Sep 2026 14:10:05 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=contoso.example;
+	dkim=pass header.d=contoso.example;
+	dmarc=pass header.from=contoso.example
+Message-ID: <cal-5b8e2a70@contoso.example>
+Date: Tue, 15 Sep 2026 14:10:04 +0000
+From: "Luis Ferreira" <luis.ferreira@contoso.example>
+To: "Jordan Reyes" <jordan.reyes@contoso.example>, "Amara Okafor" <amara.okafor@contoso.example>
+Subject: Invitation: Q4 roadmap review @ Thu 17 Sep 2026 10:00 - 10:45 (Jordan Reyes)
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1_lg03"
+
+--b1_lg03
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+You have been invited to the following event.
+
+Q4 roadmap review
+When: Thursday, 17 September 2026, 10:00 - 10:45 (Europe/Lisbon)
+Where: Room 3B / video link in calendar
+Organizer: Luis Ferreira
+Attendees: Jordan Reyes, Amara Okafor
+
+Agenda: walk through Amara's comments on the Q4 draft, agree on the
+onboarding split, and confirm what goes to leadership on Friday.
+
+--b1_lg03
+Content-Type: text/calendar; charset="utf-8"; method=REQUEST
+Content-Transfer-Encoding: 7bit
+
+BEGIN:VCALENDAR
+PRODID:-//Contoso Calendar//EN
+VERSION:2.0
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:5b8e2a70-3c1f-4d2e-9a8b-7c6d5e4f3a2b@contoso.example
+DTSTAMP:20260915T141004Z
+DTSTART;TZID=Europe/Lisbon:20260917T100000
+DTEND;TZID=Europe/Lisbon:20260917T104500
+SUMMARY:Q4 roadmap review
+LOCATION:Room 3B
+ORGANIZER;CN=Luis Ferreira:mailto:luis.ferreira@contoso.example
+ATTENDEE;CN=Jordan Reyes;RSVP=TRUE;PARTSTAT=NEEDS-ACTION:mailto:jordan.reyes@contoso.example
+ATTENDEE;CN=Amara Okafor;RSVP=TRUE;PARTSTAT=NEEDS-ACTION:mailto:amara.okafor@contoso.example
+DESCRIPTION:Walk through Amara's comments on the Q4 draft\, agree on the onboarding split\, confirm what goes to leadership Friday.
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
+
+--b1_lg03--

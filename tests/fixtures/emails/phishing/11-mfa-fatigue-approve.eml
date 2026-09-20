@@ -1,0 +1,30 @@
+Return-Path: <noreply@authgate-verify.example>
+Received: from authgate-verify.example (authgate-verify.example [192.0.2.66])
+	by mx.contoso.example with ESMTPS id 3f77c1; Mon, 21 Sep 2026 22:14:08 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=authgate-verify.example;
+	dkim=pass header.d=authgate-verify.example;
+	dmarc=none header.from=authgate-verify.example
+Message-ID: <req-99127-2214@authgate-verify.example>
+Date: Mon, 21 Sep 2026 22:14:07 +0000
+From: "Contoso Identity" <noreply@authgate-verify.example>
+To: jordan.reyes@contoso.example
+Subject: Approve sign-in request #99127 - IT is waiting on you
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Segoe UI,Arial,sans-serif">
+<p>Hi Jordan,</p>
+<p>IT Support is finishing a security patch on your account and needs you to
+<b>approve the authentication request</b> currently showing in your
+authenticator app. You may have received several prompts in the last few
+minutes; this is expected during the patch.</p>
+<p>Please tap <b>Approve</b> on your phone now. If the prompt has expired, click
+the button below and we will resend it, then approve when it appears.</p>
+<p><a href="https://authgate-verify.example/resend?rid=99127"
+style="background:#107c10;color:#fff;padding:10px 18px;text-decoration:none">Resend approval request</a></p>
+<p>If we do not receive your approval in the next 10 minutes the patch will
+fail and your account will be locked until Wednesday.</p>
+<p>Thank you,<br>Contoso Identity &amp; Access</p>
+</body></html>

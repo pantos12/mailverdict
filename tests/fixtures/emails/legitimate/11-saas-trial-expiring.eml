@@ -1,0 +1,68 @@
+Return-Path: <bounces@mail.litware-saas.example>
+Received: from mail.litware-saas.example (mail.litware-saas.example [203.0.113.10])
+	by mx.contoso.example with ESMTPS id 6e5f4a; Mon, 21 Sep 2026 09:00:08 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=mail.litware-saas.example;
+	dkim=pass header.d=litware-saas.example;
+	dmarc=pass (p=reject) header.from=litware-saas.example
+Message-ID: <trial-3d-ws8812@litware-saas.example>
+Date: Mon, 21 Sep 2026 09:00:07 +0000
+From: "Litware" <team@litware-saas.example>
+Reply-To: support@litware-saas.example
+To: jordan.reyes@contoso.example
+Subject: Your Litware trial ends in 3 days
+List-Unsubscribe: <https://litware-saas.example/email-preferences?u=ws8812>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1_lg11"
+
+--b1_lg11
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hi Jordan,
+
+Your 14-day trial of Litware Team for the "contoso-product" workspace ends
+on Thursday, 24 September.
+
+What happens next:
+- Your workspace and data stay intact.
+- After Thursday you move to the Free plan (3 projects, 2 members).
+- Anything above the Free limits becomes read-only until you upgrade.
+
+If Litware is working for your team, you can pick a plan from your
+workspace billing page: https://litware-saas.example/w/ws8812/billing
+(Team is $8 per member per month, billed annually.)
+
+Not the right time? No action needed, and nothing will be charged.
+
+Questions about plans or a longer evaluation? Reply to this email and a
+human will answer.
+
+The Litware team
+
+Manage email preferences: https://litware-saas.example/email-preferences?u=ws8812
+
+--b1_lg11
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Inter,Arial,sans-serif;max-width:560px">
+<p>Hi Jordan,</p>
+<p>Your 14-day trial of <b>Litware Team</b> for the <b>contoso-product</b> workspace
+ends on <b>Thursday, 24 September</b>.</p>
+<p><b>What happens next</b></p>
+<ul>
+<li>Your workspace and data stay intact.</li>
+<li>After Thursday you move to the Free plan (3 projects, 2 members).</li>
+<li>Anything above the Free limits becomes read-only until you upgrade.</li>
+</ul>
+<p>If Litware is working for your team, pick a plan from your
+<a href="https://litware-saas.example/w/ws8812/billing">workspace billing page</a>
+(Team is $8 per member per month, billed annually).</p>
+<p>Not the right time? No action needed, and nothing will be charged.</p>
+<p>Questions about plans or a longer evaluation? Reply to this email and a human will answer.</p>
+<p>The Litware team</p>
+<p style="font-size:11px;color:#777"><a href="https://litware-saas.example/email-preferences?u=ws8812">Manage email preferences</a></p>
+</body></html>
+
+--b1_lg11--

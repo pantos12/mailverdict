@@ -1,0 +1,58 @@
+Return-Path: <x9f2k@bulk-send.example>
+Received: from bulk-send.example (unknown [192.0.2.211])
+	by mx.contoso.example with ESMTP id c2210d; Fri, 18 Sep 2026 13:30:44 +0000
+Authentication-Results: mx.contoso.example;
+	spf=fail smtp.mailfrom=bulk-send.example;
+	dkim=fail (signature verification failed) header.d=northwind-bank.example;
+	dmarc=fail (p=reject) header.from=northwind-bank.example
+Message-ID: <kk2201.8837721@bulk-send.example>
+Date: Fri, 18 Sep 2026 13:30:43 +0000
+From: "Northwind Bank Security" <security-alerts@northwind-bank.example>
+Reply-To: "Northwind Bank Security" <nwb.security.desk@freemail.example>
+To: jordan.reyes@contoso.example
+Subject: Security Alert: Your Northwind Online Banking access has been restricted
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1_ph07"
+
+--b1_ph07
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+NORTHWIND BANK - SECURITY NOTIFICATION
+
+Dear Valued Customer,
+
+As part of our ongoing security measures, we have temporarily restricted
+access to your Northwind Online Banking profile after detecting multiple
+failed login attempts.
+
+To restore full access, please confirm your identity by logging in at:
+
+https://northwind-bank-secure.example/restore-access
+
+Failure to complete verification within 12 hours will result in permanent
+account closure and a hold on outgoing transactions.
+
+Sincerely,
+Northwind Bank Security Department
+
+This is an automated message; please do not reply.
+
+--b1_ph07
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Georgia,serif">
+<div style="background:#003b5c;color:#fff;padding:12px"><b>NORTHWIND BANK</b> &mdash; Security Notification</div>
+<p>Dear Valued Customer,</p>
+<p>As part of our ongoing security measures, we have temporarily restricted
+access to your Northwind Online Banking profile after detecting multiple
+failed login attempts.</p>
+<p>To restore full access, please confirm your identity:</p>
+<p><a href="https://northwind-bank-secure.example/restore-access">Restore Access Now</a></p>
+<p><b>Failure to complete verification within 12 hours will result in permanent
+account closure and a hold on outgoing transactions.</b></p>
+<p>Sincerely,<br>Northwind Bank Security Department</p>
+</body></html>
+
+--b1_ph07--

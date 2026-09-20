@@ -1,0 +1,46 @@
+Return-Path: <ar@tailspin-tools.example>
+Received: from mail.tailspin-tools.example (mail.tailspin-tools.example [198.51.100.60])
+	by mx.contoso.example with ESMTPS id 5d4c3b; Fri, 18 Sep 2026 07:30:22 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=tailspin-tools.example;
+	dkim=pass header.d=tailspin-tools.example;
+	dmarc=pass (p=quarantine) header.from=tailspin-tools.example
+Message-ID: <inv-TT-77901@tailspin-tools.example>
+Date: Fri, 18 Sep 2026 07:30:21 +0000
+From: "Marcus Dell" <marcus.dell@tailspin-tools.example>
+Reply-To: ar@tailspin-tools.example
+To: jordan.reyes@contoso.example
+Subject: Invoice TT-77901 for September maintenance contract
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="b1_lg09"
+
+--b1_lg09
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hi Jordan,
+
+Attached is invoice TT-77901 for the September maintenance contract,
+$4,200.00 on our usual net-30 terms (due 18 October).
+
+Payment details are unchanged from previous invoices and are printed on
+the PDF. If anything on the invoice needs a PO number added, let me know
+and I'll reissue it.
+
+Thanks as always,
+Marcus
+
+Marcus Dell
+Account Manager, Tailspin Tools
++1 555 0134 (office)
+
+--b1_lg09
+Content-Type: application/pdf; name="TT-77901.pdf"
+Content-Disposition: attachment; filename="TT-77901.pdf"
+Content-Transfer-Encoding: base64
+
+JVBERi0xLjQKJcOkw7zDtsOfCjEgMCBvYmoKPDwvVHlwZS9DYXRhbG9nL1BhZ2VzIDIgMCBSPj4K
+ZW5kb2JqCjIgMCBvYmoKPDwvVHlwZS9QYWdlcy9LaWRzW10vQ291bnQgMD4+CmVuZG9iagp0cmFp
+bGVyCjw8L1Jvb3QgMSAwIFI+PgolJUVPRgo=
+
+--b1_lg09--

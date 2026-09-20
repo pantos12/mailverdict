@@ -1,0 +1,32 @@
+Return-Path: <elena.reyes.77@freemail.example>
+Received: from smtp-out.freemail.example (smtp-out.freemail.example [198.51.100.22])
+	by mx.contoso.example with ESMTPS id 2f1e0d; Sat, 19 Sep 2026 19:12:55 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=freemail.example;
+	dkim=pass header.d=freemail.example;
+	dmarc=pass header.from=freemail.example
+Message-ID: <CAB2n8=k9Qw3x7L@freemail.example>
+Date: Sat, 19 Sep 2026 19:12:54 +0000
+From: "Elena Reyes" <elena.reyes.77@freemail.example>
+To: jordan.reyes@contoso.example
+Subject: Dad's birthday - Sunday the 4th?
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hey J,
+
+Sorry to use your work email, your other one keeps bouncing my messages
+(check your spam folder?).
+
+Are you free Sunday the 4th for Dad's birthday lunch? Mum wants to do the
+place by the river again, around 1pm. Tomas can bring the cake if you
+handle the card. Nothing fancy, just family.
+
+Let me know by Wednesday so I can book a table.
+
+Also, photos from the hike are in the shared album, the one of you falling
+in the stream is my new favourite.
+
+Love,
+Elena

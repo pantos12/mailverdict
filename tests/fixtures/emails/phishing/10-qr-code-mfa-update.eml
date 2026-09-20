@@ -1,0 +1,42 @@
+Return-Path: <hr-benefits@contoso-people.example>
+Received: from mta.contoso-people.example (mta.contoso-people.example [203.0.113.99])
+	by mx.contoso.example with ESMTPS id b8a3f0; Mon, 21 Sep 2026 07:59:33 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=contoso-people.example;
+	dkim=pass header.d=contoso-people.example;
+	dmarc=none header.from=contoso-people.example
+Message-ID: <benefits-mfa-2026q3@contoso-people.example>
+Date: Mon, 21 Sep 2026 07:59:32 +0000
+From: "Contoso HR Benefits" <hr-benefits@contoso-people.example>
+To: jordan.reyes@contoso.example
+Subject: Open enrollment: scan to set up your new authenticator (required by Sept 25)
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="b1_ph10"
+
+--b1_ph10
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hi Jordan,
+
+Open enrollment starts this week. Before you can view your 2027 benefits
+elections you must register the new company authenticator app.
+
+Simply scan the attached QR code with your phone camera, sign in with your
+work email and password, and approve the prompt. It takes under a minute.
+
+Employees who have not registered by Friday, September 25 will not be able
+to enroll and will default to no coverage.
+
+Thank you,
+Contoso HR Benefits Team
+
+--b1_ph10
+Content-Type: image/png; name="enroll-qr.png"
+Content-Disposition: inline; filename="enroll-qr.png"
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8A
+AAAASUVORK5CYII=
+
+--b1_ph10--

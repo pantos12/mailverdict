@@ -1,0 +1,38 @@
+Return-Path: <hr@contoso.example>
+Received: from mail.contoso.example (mail.contoso.example [10.20.0.15])
+	by mx.contoso.example with ESMTPS id 44e9f1; Fri, 18 Sep 2026 10:00:31 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=contoso.example;
+	dkim=pass header.d=contoso.example;
+	dmarc=pass header.from=contoso.example
+Message-ID: <hr-policy-2026-09@contoso.example>
+Date: Fri, 18 Sep 2026 10:00:30 +0000
+From: "Contoso People Team" <hr@contoso.example>
+To: all-staff@contoso.example
+Subject: Updated hybrid working policy - effective 1 October
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hello everyone,
+
+Following the feedback survey in July, we have updated the hybrid working
+policy. The new version takes effect on Thursday 1 October 2026. Summary of
+what changes:
+
+- Anchor days move from Tuesday/Thursday to Tuesday/Wednesday for all
+  teams, so cross-team meetings can be scheduled on the same days.
+- The "work from anywhere" allowance increases from 2 to 4 weeks per year.
+  Requests still go through your manager and must respect the tax rules
+  described in section 4.
+- Home office equipment budget is now a rolling 24-month allowance of $600
+  rather than a one-off.
+
+Nothing changes for people with existing flexible-working agreements.
+
+The full policy is on the intranet under People > Policies > Hybrid
+Working (version 3.0). If you have questions, ask your manager first or
+drop into the People Team open hour on Wednesdays at 13:00 in Room 2A.
+
+Thanks,
+Contoso People Team

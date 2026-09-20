@@ -1,0 +1,30 @@
+Return-Path: <calendar-notification@contoso.example>
+Received: from mail.contoso.example (mail.contoso.example [10.20.0.15])
+	by mx.contoso.example with ESMTPS id 8a7b6c; Thu, 17 Sep 2026 08:45:00 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=contoso.example;
+	dkim=pass header.d=contoso.example;
+	dmarc=pass header.from=contoso.example
+Message-ID: <reminder-5b8e2a70-20260917@contoso.example>
+Date: Thu, 17 Sep 2026 08:45:00 +0000
+From: "Contoso Calendar" <calendar-notification@contoso.example>
+To: jordan.reyes@contoso.example
+Subject: Reminder: Q4 roadmap review starts in 15 minutes
+Auto-Submitted: auto-generated
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Q4 roadmap review
+Thursday, 17 September 2026, 10:00 - 10:45 (Europe/Lisbon)
+Room 3B
+
+Organizer: Luis Ferreira
+Attendees: Jordan Reyes, Amara Okafor
+
+Agenda: walk through Amara's comments on the Q4 draft, agree on the
+onboarding split, and confirm what goes to leadership on Friday.
+
+This is an automatic reminder from your calendar. To change how far in
+advance you are reminded, open the event and edit its notification
+settings.

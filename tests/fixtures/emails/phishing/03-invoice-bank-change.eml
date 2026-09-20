@@ -1,0 +1,44 @@
+Return-Path: <accounts@tailspin-toools.example>
+Received: from mail.tailspin-toools.example (mail.tailspin-toools.example [203.0.113.88])
+	by mx.contoso.example with ESMTPS id 4cc0e2; Wed, 16 Sep 2026 09:03:19 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=tailspin-toools.example;
+	dkim=pass header.d=tailspin-toools.example;
+	dmarc=pass header.from=tailspin-toools.example
+Message-ID: <inv-77812-20260916@tailspin-toools.example>
+Date: Wed, 16 Sep 2026 09:03:18 +0000
+From: "Marcus Dell - Tailspin Tools AR" <accounts@tailspin-toools.example>
+Reply-To: accounts@tailspin-toools.example
+To: jordan.reyes@contoso.example
+Subject: RE: Invoice TT-77812 - updated remittance details
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hi Jordan,
+
+Following up on invoice TT-77812 ($48,750.00, due 18 Sep).
+
+Please note that we have recently changed banks due to an audit of our
+previous provider. Kindly update your records and remit payment to the
+new account below. Payments sent to the old account will be delayed by
+several weeks while we reconcile.
+
+  Bank:            Northwind Bank
+  Account name:    Tailspin Tools Holdings
+  Account number:  4471 9920 03
+  Routing:         021000089
+  Reference:       TT-77812
+
+Because of the due date, we would appreciate confirmation of the transfer
+today. Our finance team is unavailable by phone this week, so please
+respond to this email with the remittance advice.
+
+Kind regards,
+Marcus Dell
+Accounts Receivable
+Tailspin Tools
+
+> On 2 Sep 2026, Jordan Reyes wrote:
+> Hi Marcus, confirming receipt of TT-77812. We'll process on our normal
+> 30-day terms.

@@ -1,0 +1,40 @@
+Return-Path: <purchasing@woodgrove-supply.example>
+Received: from mail-out.woodgrove-supply.example (mail-out.woodgrove-supply.example [198.51.100.77])
+	by mx.contoso.example with ESMTPS id 0b3d5c; Fri, 18 Sep 2026 07:15:02 +0000
+Authentication-Results: mx.contoso.example;
+	spf=neutral smtp.mailfrom=woodgrove-supply.example;
+	dkim=none;
+	dmarc=none header.from=woodgrove-supply.example
+Message-ID: <PO-2026-5521@woodgrove-supply.example>
+Date: Fri, 18 Sep 2026 07:15:01 +0000
+From: "Woodgrove Supply Purchasing" <purchasing@woodgrove-supply.example>
+To: jordan.reyes@contoso.example
+Subject: Purchase Order PO-2026-5521 - please confirm pricing
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="b1_ph06"
+
+--b1_ph06
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Good morning,
+
+Please find attached our purchase order PO-2026-5521. Kindly review the
+item list and confirm unit pricing and lead time by end of day.
+
+The PO is provided as a disk image for your records; simply double-click
+to open it.
+
+Best regards,
+Purchasing Department
+Woodgrove Supply
+
+--b1_ph06
+Content-Type: application/x-iso9660-image; name="PO-2026-5521.iso"
+Content-Disposition: attachment; filename="PO-2026-5521.iso"
+Content-Transfer-Encoding: base64
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+--b1_ph06--

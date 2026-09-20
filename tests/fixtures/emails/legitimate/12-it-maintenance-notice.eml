@@ -1,0 +1,35 @@
+Return-Path: <it-servicedesk@contoso.example>
+Received: from mail.contoso.example (mail.contoso.example [10.20.0.15])
+	by mx.contoso.example with ESMTPS id 9c8b7a; Tue, 22 Sep 2026 15:20:11 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=contoso.example;
+	dkim=pass header.d=contoso.example;
+	dmarc=pass header.from=contoso.example
+Message-ID: <chg-2026-0917@contoso.example>
+Date: Tue, 22 Sep 2026 15:20:10 +0000
+From: "Contoso IT Service Desk" <it-servicedesk@contoso.example>
+To: all-staff@contoso.example
+Subject: Planned maintenance: VPN and file shares, Saturday 26 Sep 22:00-02:00
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hello,
+
+We will be applying firmware updates to the VPN gateways and migrating the
+"Shared" and "Projects" file shares to new storage.
+
+When:      Saturday 26 September 2026, 22:00 to 02:00 (Europe/Lisbon)
+Impact:    VPN will disconnect for up to 20 minutes, twice, during the
+           window. File shares will be read-only from 23:00 to 01:00.
+Change ID: CHG-2026-0917
+
+What you need to do: nothing. Save your work before 22:00 if you plan to
+be connected. Your credentials and MFA settings are not affected and you
+will not be asked to log in again.
+
+If you still cannot connect after 02:30 on Sunday, raise a ticket on the
+service desk portal from the intranet home page or call extension 4000.
+
+Thanks for your patience,
+Contoso IT Service Desk

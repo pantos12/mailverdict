@@ -1,0 +1,32 @@
+Return-Path: <priya.n.ceo.contoso@freemail.example>
+Received: from smtp-out.freemail.example (smtp-out.freemail.example [198.51.100.22])
+	by mx.contoso.example with ESMTPS id 91bd77; Tue, 15 Sep 2026 15:41:03 +0000
+Authentication-Results: mx.contoso.example;
+	spf=pass smtp.mailfrom=freemail.example;
+	dkim=pass header.d=freemail.example;
+	dmarc=pass header.from=freemail.example
+Message-ID: <CAF+9x2Qk7aBv3=tZ0@freemail.example>
+Date: Tue, 15 Sep 2026 15:41:02 +0000
+From: "Priya Natarajan" <priya.n.ceo.contoso@freemail.example>
+Reply-To: priya.n.ceo.contoso@freemail.example
+To: jordan.reyes@contoso.example
+Subject: Quick favor - are you at your desk?
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Jordan,
+
+I'm stuck in back-to-back board meetings and can't talk. I need you to
+handle something discreetly for me.
+
+We're sending gift cards to a few clients today as a thank-you. Please pick
+up 6 x $200 Playmart eGift cards from any store or online, then scratch off
+the backs and email me photos of the codes. I'll reimburse you through
+expenses this afternoon, just keep the receipt.
+
+Please don't mention this to anyone yet, it's a surprise for the team. How
+soon can you get this done?
+
+Sent from my iPhone
+Priya

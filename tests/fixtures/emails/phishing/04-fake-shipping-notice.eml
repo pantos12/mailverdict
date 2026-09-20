@@ -1,0 +1,52 @@
+Return-Path: <notify-8823@swiftparcel-track.example>
+Received: from relay3.swiftparcel-track.example (relay3.swiftparcel-track.example [192.0.2.140])
+	by mx.contoso.example with ESMTPS id e77a09; Thu, 17 Sep 2026 06:22:55 +0000
+Authentication-Results: mx.contoso.example;
+	spf=softfail smtp.mailfrom=swiftparcel-track.example;
+	dkim=none;
+	dmarc=none header.from=swiftparcel-track.example
+Message-ID: <8823-4410-notify@swiftparcel-track.example>
+Date: Thu, 17 Sep 2026 06:22:54 +0000
+From: "SwiftParcel Delivery" <notify-8823@swiftparcel-track.example>
+To: jordan.reyes@contoso.example
+Subject: Your package could not be delivered - action required (SP-4410-88219)
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1_ph04"
+
+--b1_ph04
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+SwiftParcel
+
+Delivery attempt failed
+
+Tracking number: SP-4410-88219
+Reason: Address incomplete / customs fee unpaid ($1.99)
+
+Your parcel is being held at our depot. To avoid it being returned to the
+sender, confirm your address and pay the outstanding fee within 48 hours:
+
+https://swiftparcel-track.example/redelivery/SP-4410-88219
+
+Thank you for choosing SwiftParcel.
+
+--b1_ph04
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial,sans-serif">
+<img src="https://swiftparcel-track.example/img/logo.png" alt="SwiftParcel" width="140">
+<h3>Delivery attempt failed</h3>
+<table>
+<tr><td>Tracking number:</td><td><b>SP-4410-88219</b></td></tr>
+<tr><td>Reason:</td><td>Address incomplete / customs fee unpaid ($1.99)</td></tr>
+</table>
+<p>Your parcel is being held at our depot. To avoid it being returned to the
+sender, confirm your address and pay the outstanding fee within <b>48 hours</b>:</p>
+<p><a href="https://swiftparcel-track.example/redelivery/SP-4410-88219"
+style="background:#e30613;color:#fff;padding:10px 18px;text-decoration:none">Schedule redelivery</a></p>
+<p style="font-size:11px;color:#888">Thank you for choosing SwiftParcel.</p>
+</body></html>
+
+--b1_ph04--
